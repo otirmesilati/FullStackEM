@@ -1,3 +1,11 @@
 ###
 
-GET http://localhost:3001/
+GET http://localhost:3001/test
+
+###
+
+GET http://localhost:3001/post
+
+###
+
+POST http://localhost:3001/post

@@ -7,14 +7,19 @@ const port = process.env.PORT
 
 
 
-
-
-
-
-
-app.get('/' ,(req, res) => {
-    res.send('Hi');
+app.get('/test', (req, res)=> { 
+    res.send('Hi'); 
 });
+
+app.get('/post' ,(req, res) => {
+    res.send('app get post');
+});
+
+app.post('/post', (req, res)=> {
+     res.send('app post post'); 
+});
+
+
 
 
 app.listen(port, () => {
