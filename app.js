@@ -9,6 +9,10 @@ const db = mongoose.connection;
 db.on('error', error=>{console.error(error);});
 db.once('open', () => {console.log('Connected to MongoDB');});
 
+const bodyparser = require('body-parser');
+app.use(bodyparser.urlencoded({ extended: true, limit: '1mb' }));
+app.use(bodyparser.json());
+
 const port = process.env.PORT
 
 
