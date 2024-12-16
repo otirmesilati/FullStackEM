@@ -1,4 +1,6 @@
 const express = require('express');
 const app = express();
 
-// creating the request - response
+app.get('/' ,(req, res) => {
+    res.send('Hi');
+});
