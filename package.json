@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/otirmesilati/FullStackEM/issues"
   },
-  "homepage": "https://github.com/otirmesilati/FullStackEM#readme"
+  "homepage": "https://github.com/otirmesilati/FullStackEM#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
