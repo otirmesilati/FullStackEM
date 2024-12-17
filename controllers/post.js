@@ -3,7 +3,7 @@ const getAllPosts = (req, res)=> {
 };
 
 const createNewPosts = (req, res)=> { 
-    res.send('app get post');
+    res.send(req.body);
 };
 
 module.exports = {
