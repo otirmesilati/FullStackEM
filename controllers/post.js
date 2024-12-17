@@ -5,6 +5,7 @@ const getAllPosts = (req, res)=> {
 };
 
 const createNewPosts = (req, res)=> { 
+    res.send(req.body)
     console.log(req.body);
     const post = Post({
         message: req.body.message,
@@ -27,7 +28,6 @@ const createNewPosts = (req, res)=> {
         });
         done();
     })
-    console.log(output);
 
 };
 
