@@ -34,22 +34,13 @@ const createNewPosts = async (req, res) => {
     }
 };
 
-    // post.save((err, newPost)=>{
-    //     if(err){
-    //         res.status(400).send({
-    //             'status': 'failed',
-    //             'message': err.message 
-    //         })
-    //     }
-    //     else{
-    //         res.status(200).send(newPost)
-
-    //     }
-    // })
-
+const getPostById = async (req, res) => {
+    console.log('getPostById', req.params.id);
+};
 
 
 module.exports = {
     getAllPosts,
-    createNewPosts
+    createNewPosts,
+    getPostById
 }
