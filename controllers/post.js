@@ -1,7 +1,17 @@
 const Post = require('../models/post_model');
 
-const getAllPosts = (req, res)=> { 
-    res.send('app get post');
+const getAllPosts = async (req, res)=> { 
+    console.log('Get All Posts');
+
+    try{
+        const posts = await Post.find()
+        res.status(200).send(posts)
+    }  catch(err){
+        res.status(400).send({
+            'status': 'failed',
+            'message': err.message
+        });
+    }
 };
 
 const createNewPosts = async (req, res) => { 
@@ -23,7 +33,6 @@ const createNewPosts = async (req, res) => {
         }); // Handle any errors that occurred during the save operation
     }
 };
-
 
     // post.save((err, newPost)=>{
     //     if(err){
