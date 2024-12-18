@@ -36,6 +36,23 @@ const createNewPosts = async (req, res) => {
 
 const getPostById = async (req, res) => {
     console.log('getPostById', req.params.id);
+    const id = req.params.id;
+
+    if(id == null || id == undefined){
+        res.status(400).send({
+            'status': 'failed',
+            'message': 'Invalid id'
+        })
+    }
+    try{
+        post = Post.findById(id);
+        res.status(200).send(post);
+    }catch(err){
+        res.status(400).send({
+            'status': 'failed',
+            'message': err.message
+        });
+    }
 };
 
 

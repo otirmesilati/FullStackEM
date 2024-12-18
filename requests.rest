@@ -4,6 +4,10 @@ GET http://localhost:3001/post
 
 ###
 
+GET http://localhost:3001/post/123456
+
+###
+
 POST http://localhost:3001/post
 Content-Type: application/json
 
