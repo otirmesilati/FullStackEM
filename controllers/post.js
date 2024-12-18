@@ -4,7 +4,15 @@ const getAllPosts = async (req, res)=> {
     console.log('Get All Posts');
 
     try{
-        const posts = await Post.find()
+        const sender = req.query.sender;
+        var posts
+
+        if(sender != null || sender != undefined) {
+            posts = await Post.find({sender: sender})
+        }   else{
+            posts = await Post.find()
+        }
+        
         res.status(200).send(posts)
     }  catch(err){
         res.status(400).send({
@@ -45,7 +53,7 @@ const getPostById = async (req, res) => {
         })
     }
     try{
-        post = Post.findById(id);
+        post = await Post.findById(id);
         res.status(200).send(post);
     }catch(err){
         res.status(400).send({

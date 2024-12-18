@@ -4,7 +4,11 @@ GET http://localhost:3001/post
 
 ###
 
-GET http://localhost:3001/post/123456
+GET http://localhost:3001/post/post?sender=Otyr
+
+###
+
+GET http://localhost:3001/post/6761ced3e67abb29629a6608
 
 ###
 
