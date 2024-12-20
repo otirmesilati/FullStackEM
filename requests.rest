@@ -4,7 +4,7 @@ GET http://localhost:3001/post
 
 ###
 
-GET http://localhost:3001/post/post?sender=Otyr
+GET http://localhost:3001/post?sender=Otyr
 
 ###
 

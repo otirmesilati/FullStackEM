@@ -1,27 +1,5 @@
 const Post = require('../models/post_model');
 
-const getAllPosts = async (req, res)=> { 
-    console.log('Get All Posts');
-
-    try{
-        const sender = req.query.sender;
-        var posts
-
-        if(sender != null || sender != undefined) {
-            posts = await Post.find({sender: sender})
-        }   else{
-            posts = await Post.find()
-        }
-        
-        res.status(200).send(posts)
-    }  catch(err){
-        res.status(400).send({
-            'status': 'failed',
-            'message': err.message
-        });
-    }
-};
-
 const createNewPosts = async (req, res) => { 
     try {
         console.log(req.body);
@@ -42,18 +20,44 @@ const createNewPosts = async (req, res) => {
     }
 };
 
-const getPostById = async (req, res) => {
-    console.log('getPostById', req.params.id);
-    const id = req.params.id;
+const getAllPosts = async (req, res)=> { 
+    console.log('Get All Posts');
 
-    if(id == null || id == undefined){
+    try{
+        const sender = req.query.sender;
+        var posts
+
+        if(sender != null | sender != undefined) {
+            
+            posts = await Post.find({'sender': sender})
+        }   else{
+                posts = await Post.find()
+        }
+        
+        res.status(200).send(posts)
+    }  catch(err){
         res.status(400).send({
             'status': 'failed',
-            'message': 'Invalid id'
-        })
+            'message': err.message
+        });
     }
+};
+
+const getPostById = async (req, res) => {
+    console.log('getPostById', req.params.id);
+
+    
     try{
-        post = await Post.findById(id);
+        const id = req.params.id;
+        if(id == null || id == undefined){
+            res.status(400).send({
+                'status': 'failed',
+                'message': 'Invalid id'
+            })
+        }
+        else{
+            post = await Post.findById(id);
+        }
         res.status(200).send(post);
     }catch(err){
         res.status(400).send({
