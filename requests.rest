@@ -8,7 +8,7 @@ GET http://localhost:3001/post?sender=Otyr
 
 ###
 
-GET http://localhost:3001/post/6761ced3e67abb29629a6608
+GET http://localhost:3001/post/67653ac115ecd6c261b46cab
 
 ###
 
