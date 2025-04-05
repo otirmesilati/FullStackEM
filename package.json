@@ -4,7 +4,7 @@
   "description": "spidey webz",
   "main": "app.js",
   "scripts": {
-    "test": "jest --detectOpenHandles --forceExit",
+    "test": "jest --detectOpenHandles --forceExit --coverage",
     "start": "node app.js",
     "devstart": "nodemon app.js"
   },
@@ -27,6 +27,7 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.9",
-    "supertest": "^7.1.0"
+    "supertest": "^7.1.0",
+    "typescript": "^5.8.3"
   }
 }
